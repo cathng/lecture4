@@ -16,7 +16,7 @@ export const PokemonSearch = (props) => (
     />
     <select id="pokemonType">
       <option value="1">Fire</option>
-      <option value="2" selected="selected">Water</option>
+      <option value="2">Water</option>
       <option value="3">Ice</option>
     </select>
   </div>

@@ -14,9 +14,15 @@ class App extends Component {
   }
 
   saveTypeToState(type) {
-    this.setState({
-      pokemonType: type
-    });
+
+    const pokemonType = this.state.pokemonType;
+    if(event.target.checked) {
+      this.setState({
+        pokemonTypes: pokemonTypes.push(event.target.value)
+      })
+    } else {
+
+    }
   }
 
   searchPokemonCardByName(name) {
@@ -50,6 +56,7 @@ class App extends Component {
             appUsed={this.state.appUsed}
             pending={this.state.pending}
             pokemonCards={this.state.pokemonCards}
+            //passed down parameters
           />
         </div>
       </div>
