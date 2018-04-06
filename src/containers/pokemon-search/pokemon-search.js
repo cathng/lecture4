@@ -14,7 +14,7 @@ export const PokemonSearch = (props) => (
       placeholder="pokemon name ex. pikachu"
       search={props.search}
     />
-    <select id="pokemonType">
+    <select id="pokemonType" onChange={()=>props.}>
       <option value="1">Fire</option>
       <option value="2">Water</option>
       <option value="3">Ice</option>
