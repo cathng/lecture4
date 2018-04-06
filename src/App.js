@@ -9,11 +9,20 @@ class App extends Component {
       pending: false,
       appUsed: false,
       pokemonCards: [],
+      pokemonType: ''
     };
   }
 
+  saveTypeToState(type) {
+    this.setState({
+      pokemonType: type
+    });
+  }
+
   searchPokemonCardByName(name) {
-    const api = 'https://api.pokemontcg.io/v1/cards?page=1&pageSize=30&name=';
+    const api = 'https://api.pokemontcg.io/v1/cards?page=1&pageSize=30';
+    const apiWithName = api + '&name=' + name;
+    const apiWithType = apiWithName + '&types=' + this.state.pokemonType;
 
     this.setState({
       pokemonCards: [],
@@ -21,7 +30,7 @@ class App extends Component {
       appUsed: true,
     });
 
-    fetch(api + name)
+    fetch(apiWithType)
     .then(response => response.json())
     .then(data => {
         this.setState({
